@@ -1,11 +1,16 @@
 <template>
-  <h1>HelloWorld</h1>
+  <h1>HelloWorldHi</h1>
+  <ProductComponent />
 </template>
 
 <script>
+import ProductComponent from './components/ProductComonent.vue';
+
 export default {
   name: 'App',
-  components: {},
+  components: {
+    ProductComponent,
+  },
 };
 </script>
 
