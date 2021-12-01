@@ -1,10 +1,10 @@
 <template>
-$END$
+  <div>Admin</div>
 </template>
 
 <script>
 export default {
-name: "Admin"
+  name: "admin"
 }
 </script>
 

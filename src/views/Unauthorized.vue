@@ -1,10 +1,10 @@
 <template>
-$END$
+  <div>Unauthorized</div>
 </template>
 
 <script>
 export default {
-name: "Unauthorized"
+  name: "unauthorized"
 }
 </script>
 

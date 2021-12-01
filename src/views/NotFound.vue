@@ -1,10 +1,10 @@
 <template>
-$END$
+  <div>Not Found</div>
 </template>
 
 <script>
 export default {
-name: "NotFound"
+  name: "not-found"
 }
 </script>
 
