@@ -43,6 +43,11 @@ const routes = [
         name: "401",
         component: Unauthorized,
     },
+    //otherwise unKnown pages
+    {
+        path: "/:catchAll(.*)",
+        redirect: "/404"
+    }
     // {
     //   path: "/about",
     //   name: "About",

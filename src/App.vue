@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand text-white" href="https://vuejs.org">
           <img src="./assets/logo.png" alt="logo" height="40"/>
@@ -14,18 +14,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link text-white active" aria-current="page" href="/admin">Amin</a>
+              <router-link class="nav-link text-white" to="/admin" active-class="active">Amin</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white active" href="/">Home</a>
+              <router-link class="nav-link text-white" to="/" active-class="active">Home</router-link>
             </li>
           </ul>
           <div class="d-flex flex-lg-row flex-sm-column">
             <p class="nav-item">
-              <a class="ps-0 nav-link" href="/register">Sign Up</a>
+              <router-link class="ps-0 nav-link" to="/register" active-class="active">Sign Up</router-link>
             </p>
             <p class="nav-item">
-              <a class="ps-0 nav-link" href="/login">Sign In</a>
+              <router-link class="ps-0 nav-link" to="/login" active-class="active">Sign In</router-link>
             </p>
           </div>
         </div>
