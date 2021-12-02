@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="password">Username</label>
+          <label for="password">Password</label>
           <input
               type="password"
               id="password"

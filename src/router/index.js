@@ -6,6 +6,8 @@ import Register from "@/views/Register";
 import Login from "@/views/Login";
 import NotFound from "@/views/NotFound";
 import Unauthorized from "@/views/Unauthorized";
+import Role from "../Models/role";
+import store from '../store'
 
 const routes = [
     {
@@ -17,11 +19,13 @@ const routes = [
         path: "/admin",
         name: "admin",
         component: Admin,
+        meta: {role: [Role.ADMIN]}
     },
     {
         path: "/profile",
         name: "profile",
         component: Profile,
+        meta: {roles: [Role.ADMIN, Role.USER]}
     },
     {
         path: "/register",
@@ -48,20 +52,27 @@ const routes = [
         path: "/:catchAll(.*)",
         redirect: "/404"
     }
-    // {
-    //   path: "/about",
-    //   name: "About",
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () =>
-    //     import(/* webpackChunkName: "about" */ "../views/About.vue"),
-    // },
 ];
 
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes,
+});
+
+router.beforeEach((to, from, next) => {
+    const {roles} = to.meta;
+    const currentUser = store.getters['currentUser']
+    if (roles?.length) {
+        if (!currentUser) {
+            return next({path: '/login'});
+
+        }
+
+        if (!roles.includes(currentUser.role)) {
+            return next({path: '/401'});
+        }
+    }
+    next();
 });
 
 export default router;
