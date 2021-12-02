@@ -13,19 +13,28 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+            <li class="nav-item" v-if="isAdmin">
               <router-link class="nav-link text-white" to="/admin" active-class="active">Amin</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link text-white" to="/" active-class="active">Home</router-link>
             </li>
           </ul>
-          <div class="d-flex flex-lg-row flex-sm-column">
+          <div class="d-flex flex-lg-row flex-sm-column" v-if="!currentUser">
             <p class="nav-item">
               <router-link class="ps-0 nav-link" to="/register" active-class="active">Sign Up</router-link>
             </p>
             <p class="nav-item">
               <router-link class="ps-0 nav-link" to="/login" active-class="active">Sign In</router-link>
+            </p>
+          </div>
+
+          <div class="d-flex flex-lg-row flex-sm-column" v-if="currentUser">
+            <p class="nav-item">
+              <router-link class="ps-0 nav-link" to="/register" active-class="profile">{{currentUser.name}}</router-link>
+            </p>
+            <p class="nav-item">
+              <a class="ps-0 nav-link active" href="#" @click="logout">Sign Out</a>
             </p>
           </div>
         </div>
@@ -37,6 +46,27 @@
     </div>
   </div>
 </template>
+
+<script>
+import vuex from "vuex";
+import Role from "./Models/role";
+
+export default {
+  computed:{
+    ...vuex.mapGetters(['currentUser']),
+    isAdmin(){
+      return this.currentUser?.role === Role.ADMIN
+    }
+  },
+  methods:{
+    ...vuex.mapActions(['clearUser']),
+    logout(){
+      this.clearUser()
+      this.$router.push('/login')
+    }
+  }
+}
+</script>
 
 <style>
 </style>
