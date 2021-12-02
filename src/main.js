@@ -12,12 +12,12 @@ window.$ = $;
 
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {library} from "@fortawesome/fontawesome-svg-core";
-import {faHome} from "@fortawesome/free-solid-svg-icons";
+import {faHome,faUserCircle} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faHome);
+library.add(faHome,faUserCircle);
 
 createApp(App)
     .use(store)
     .use(router)
-    .component('font-awesome-icons', FontAwesomeIcon)
+    .component('font-awesome-icon', FontAwesomeIcon)
     .mount("#app");

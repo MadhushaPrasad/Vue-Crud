@@ -9,6 +9,7 @@ class AuthenticationService {
     }
 
     register(user) {
+        alert('hello')
         return axios.post(api_url, user);
     }
 
