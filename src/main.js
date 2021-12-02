@@ -6,15 +6,17 @@ import store from "./store";
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import './global.css';
+
 global.JQuery = require('jquery');
 const $ = global.JQuery;
 window.$ = $;
 
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {library} from "@fortawesome/fontawesome-svg-core";
-import {faHome,faUserCircle} from "@fortawesome/free-solid-svg-icons";
+import {faHome, faUserCircle} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faHome,faUserCircle);
+library.add(faHome, faUserCircle);
 
 createApp(App)
     .use(store)
