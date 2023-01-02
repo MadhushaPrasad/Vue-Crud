@@ -21,7 +21,7 @@
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-babel": "~5.0.8",
     "@vue/cli-plugin-eslint": "~5.0.8",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
@@ -34,7 +34,7 @@
     "eslint-plugin-vue": "^7.0.0",
     "prettier": "^2.2.1",
     "sass": "^1.26.5",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^13.2.0"
   },
   "eslintConfig": {
     "root": true,
